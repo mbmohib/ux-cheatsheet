@@ -12,6 +12,9 @@ import JobIcon from './JobIcon';
 import GigIcon from './GigIcon';
 import FreelancerIcon from './FreelancerIcon';
 import MoneyIcon from './MoneyIcon';
+import InputIcon from './InputIcon';
+import FormIcon from './FormIcon';
+import ButtonIcon from './ButtonIcon';
 
 export {
   AdminIcon,
@@ -28,4 +31,7 @@ export {
   GigIcon,
   FreelancerIcon,
   MoneyIcon,
+  InputIcon,
+  FormIcon,
+  ButtonIcon,
 };

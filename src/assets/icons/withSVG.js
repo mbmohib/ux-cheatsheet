@@ -3,13 +3,14 @@ import React from 'react';
 function withSVG(WrappedComponent, config = {}) {
   return class extends React.Component {
     render() {
+      console.log(this.props);
       const {
         style = config.style || {},
         fill = config.fill || '',
-        width = config.size || '24',
-        height = config.size || '24',
+        width = this.props.size || config.size || '24',
+        height = this.props.size || config.size || '24',
         className = config.className || '',
-        viewBox = config.viewBox || '0 0 24 24',
+        viewBox = config.viewBox || '0 0 80 80',
       } = this.props;
 
       return (

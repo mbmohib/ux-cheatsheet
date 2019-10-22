@@ -135,7 +135,7 @@ export default {
     h4: {
       fontFamily: '""Roboto", "Helvetica", "Arial", sans-serif"',
       fontWeight: 400,
-      fontSize: '2.125rem',
+      fontSize: '1.5rem',
       lineHeight: 1.17,
       letterSpacing: '0.00735em',
     },
