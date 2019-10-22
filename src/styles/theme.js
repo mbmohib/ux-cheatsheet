@@ -6,6 +6,11 @@ export const sizes = {
   xl: 1920,
 };
 
+export const fonts = {
+  titleFont: `'Comfortaa', cursive`,
+  normalFont: `'Roboto', sans-serif;`,
+};
+
 export default {
   breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -61,19 +66,17 @@ export default {
     htmlFontSize: 16,
     body1: {
       fontWeight: 400,
-      fontSize: '1rem',
+      fontSize: '1.2rem',
       lineHeight: 1.5,
-      letterSpacing: '0.00938em',
+      letterSpacing: '0.5px',
     },
     body2: {
       fontWeight: 400,
       fontSize: '0.875rem',
       lineHeight: 1.43,
       letterSpacing: '0.01071em',
-      color: '#cdcdcd',
     },
     overline: {
-      fontFamily: '""Roboto", "Helvetica", "Arial", sans-serif"',
       fontWeight: 400,
       fontSize: '0.75rem',
       lineHeight: 2.66,
@@ -82,7 +85,7 @@ export default {
     subtitle1: {
       fontFamily: '""Roboto", "Helvetica", "Arial", sans-serif"',
       fontWeight: 400,
-      fontSize: '1rem',
+      fontSize: '1.2rem',
       lineHeight: 1.75,
       letterSpacing: '0.00938em',
       color: '#757575',
@@ -107,18 +110,20 @@ export default {
       letterSpacing: '0.03333em',
     },
     h1: {
-      fontFamily: '""Roboto", "Helvetica", "Arial", sans-serif"',
+      fontFamily: fonts.normalFont,
       fontWeight: 300,
-      fontSize: '6rem',
+      fontSize: '3rem',
       lineHeight: 1,
       letterSpacing: '-0.01562em',
+      marginBottom: '10px',
     },
     h2: {
       fontFamily: '""Roboto", "Helvetica", "Arial", sans-serif"',
       fontWeight: 300,
-      fontSize: '3.75rem',
+      fontSize: '2.75rem',
       lineHeight: 1,
       letterSpacing: '-0.00833em',
+      marginBottom: '10px',
     },
     h3: {
       fontFamily: '""Roboto", "Helvetica", "Arial", sans-serif"',
@@ -166,12 +171,6 @@ export default {
     common: { black: '#000', white: '#fff' },
     contrastThreshold: 3,
     divider: 'rgba(0, 0, 0, 0.12)',
-    error: {
-      light: '#e57373',
-      main: '#f44336',
-      dark: '#d32f2f',
-      contrastText: '#fff',
-    },
     grey: {
       50: '#fafafa',
       100: '#f5f5f5',
@@ -202,9 +201,15 @@ export default {
     },
     text: {
       primary: 'rgba(0, 0, 0, 0.87)',
-      secondary: 'rgba(0, 0, 0, 0.54)',
+      secondary: 'rgba(255, 255, 255, 255)',
       disabled: 'rgba(0, 0, 0, 0.38)',
       hint: 'rgba(0, 0, 0, 0.38)',
+    },
+    error: {
+      light: '#e57373',
+      main: '#f44336',
+      dark: '#d32f2f',
+      contrastText: '#fff',
     },
     tonalOffset: 0.2,
     type: 'light',

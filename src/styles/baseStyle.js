@@ -1,12 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 const BaseStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400');
+    @import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400&display=swap');
     @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 
     body {
-      font-family: ${props => props.theme.normalFont};
+      font-family: ${props => props.theme.palette.text.primary};
     }
+
     h1, h2, h3, h4, h5, h6 {
         margin: 0;
         padding: 0;

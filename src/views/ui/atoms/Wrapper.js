@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
-import { palette, spacing, sizing } from '@material-ui/system';
+import { palette, spacing, sizing, borders } from '@material-ui/system';
 
 const Wrapper = styled.div`
+  transition: all 0.3s;
+
   ${props =>
     props.flex &&
     css`
@@ -23,9 +25,42 @@ const Wrapper = styled.div`
         `
       : ''};
 
+  ${props =>
+    props.bgImage &&
+    css`
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+        url(${props.bgImage});
+      background-size: cover;
+      background-repeat: no-repeat;
+    `}
+
+    ${props =>
+      props.shadow && props.shadow === 1
+        ? css`
+            box-shadow: 0 8px 16px 0 rgba(51, 51, 51, 0.08);
+          `
+        : ''}
+
+    ${props =>
+      props.hover && props.shadow
+        ? css`
+            cursor: pointer;
+            :hover {
+              box-shadow: 0 16px 32px 0 rgba(51, 51, 51, 0.24);
+            }
+          `
+        : ''}
+
+    ${props =>
+      props.hover &&
+      css`
+        cursor: pointer;
+      `}
+
   ${spacing};
   ${palette};
   ${sizing};
+  ${borders};
 `;
 
 export default Wrapper;

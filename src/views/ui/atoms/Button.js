@@ -5,10 +5,14 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const ButtonWrapper = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: ${({ justify }) => (justify ? justify : 'center')};
-  align-items: center;
+  ${props =>
+    props.loading &&
+    css`
+      position: relative;
+      display: flex;
+      justify-content: ${({ justify }) => (justify ? justify : 'center')};
+      align-items: center;
+    `}
 `;
 
 const CircularProgressWrapper = styled(CircularProgress)`
@@ -45,7 +49,7 @@ const ButtonExtended = ({
   ...rest
 }) => {
   return (
-    <ButtonWrapper justify={justify}>
+    <ButtonWrapper justify={justify} loading={loading}>
       <StyledButton minWidth={minWidth} {...rest} />
       {loading && <CircularProgressWrapper size={24} />}
     </ButtonWrapper>

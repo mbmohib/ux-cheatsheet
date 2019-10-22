@@ -10,10 +10,15 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `;
 
+const Main = styled.div`
+  flex-grow: 1;
+  margin-top: 120px;
+`;
+
 const Layout = ({ children }) => (
   <Wrapper>
     <Header />
-    <main style={{ flexGrow: 1 }}>{children}</main>
+    <Main>{children}</Main>
     <Footer />
   </Wrapper>
 );

@@ -9,7 +9,7 @@ const SearchWrapper = styled.div`
   svg {
     position: absolute;
     top: 12px;
-    left: 8px;
+    left: 12px;
     z-index: 900;
   }
 `;
