@@ -25,7 +25,7 @@ const CircularProgressWrapper = styled(CircularProgress)`
   }
 `;
 
-const StyledButton = styled(({ minWidth, justify, ...rest }) => (
+const StyledButton = styled(({ minWidth, justify, loading, ...rest }) => (
   <Button {...rest} />
 ))`
   box-shadow: none;
@@ -42,15 +42,10 @@ const StyledButton = styled(({ minWidth, justify, ...rest }) => (
   ${spacing};
 `;
 
-const ButtonExtended = ({
-  justify,
-  minWidth = 100,
-  loading = false,
-  ...rest
-}) => {
+const ButtonExtended = ({ justify, minWidth = 100, loading, ...rest }) => {
   return (
     <ButtonWrapper justify={justify} loading={loading}>
-      <StyledButton minWidth={minWidth} {...rest} />
+      <StyledButton minWidth={minWidth} loading={loading} {...rest} />
       {loading && <CircularProgressWrapper size={24} />}
     </ButtonWrapper>
   );

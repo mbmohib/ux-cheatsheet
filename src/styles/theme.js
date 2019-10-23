@@ -105,9 +105,10 @@ export default {
     },
     caption: {
       fontWeight: 400,
-      fontSize: '0.75rem',
+      fontSize: '0.8rem',
       lineHeight: 1.66,
       letterSpacing: '0.03333em',
+      color: '#00000080',
     },
     h1: {
       fontFamily: fonts.normalFont,

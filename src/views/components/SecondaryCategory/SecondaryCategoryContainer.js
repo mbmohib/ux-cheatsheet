@@ -12,7 +12,7 @@ const PrimaryCategoryContainer = () => {
         { label: 'Form', icon: <FormIcon />, url: '' },
         {
           label: 'Search',
-          icon: <SearchIcon size="60" />,
+          icon: <SearchIcon size="80" />,
           url: '',
         },
         { label: 'Button', icon: <ButtonIcon />, url: '' },

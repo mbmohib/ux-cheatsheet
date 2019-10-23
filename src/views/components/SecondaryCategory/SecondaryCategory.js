@@ -17,7 +17,9 @@ const SecondaryCategory = ({ category }) => {
       direction="column"
     >
       {category.icon}
-      <Typography variant="h4">{category.label}</Typography>
+      <Typography variant="h4" mt={1}>
+        {category.label}
+      </Typography>
     </Wrapper>
   );
 };
