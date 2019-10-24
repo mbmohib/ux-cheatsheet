@@ -12,6 +12,7 @@ const metaReducers = (state = initialState, action) => {
     switch (type) {
       case types.GET_CATEGORIES_COMPLETED:
         draft.categories = payload;
+        break;
     }
   });
 };

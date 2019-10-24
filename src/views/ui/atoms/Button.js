@@ -38,6 +38,30 @@ const StyledButton = styled(({ minWidth, justify, loading, ...rest }) => (
       padding: 6px 18px 3px;
     `}
 
+  ${({ variant }) =>
+    variant === 'text' &&
+    css`
+      margin-left: -30px;
+      display: inline-block;
+
+      :after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: ${props => props.theme.palette.primary.main + '90'};
+        transition: width 0.3s;
+      }
+
+      :hover {
+        background-color: transparent !important;
+
+        :after {
+          width: 100%;
+        }
+      }
+    `}
+
   ${sizing};
   ${spacing};
 `;
