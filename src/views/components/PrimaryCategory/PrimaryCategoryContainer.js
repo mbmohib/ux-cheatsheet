@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Grid } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { metaActions } from 'store/metas';
 import PrimaryCategory from './PrimaryCategory';
@@ -8,9 +8,11 @@ import { signInImage, checkoutImage } from 'assets/images';
 
 const PrimaryCategoryContainer = () => {
   const dispatch = useDispatch();
+  const categories = useSelector(state => state.metas.categories);
 
   useEffect(() => {
     dispatch(metaActions.getCategories());
+    console.log(categories);
   }, []);
 
   return (

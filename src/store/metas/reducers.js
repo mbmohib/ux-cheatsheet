@@ -1,4 +1,5 @@
 import * as types from './types';
+import produce from 'immer';
 
 const initialState = {
   categories: '',
@@ -6,17 +7,13 @@ const initialState = {
 
 const metaReducers = (state = initialState, action) => {
   const { type, payload } = action;
-  switch (type) {
-    case types.GET_CATEGORIES_COMPLETED:
-      return {
-        ...state,
-        categories: {
-          ...payload,
-        },
-      };
-    default:
-      return state;
-  }
+
+  return produce(state, draft => {
+    switch (type) {
+      case types.GET_CATEGORIES_COMPLETED:
+        draft.categories = payload;
+    }
+  });
 };
 
 export default metaReducers;
