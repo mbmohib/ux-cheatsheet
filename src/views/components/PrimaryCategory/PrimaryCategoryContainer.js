@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Grid } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
 
+import { metaActions } from 'store/metas';
 import PrimaryCategory from './PrimaryCategory';
 import { signInImage, checkoutImage } from 'assets/images';
 
 const PrimaryCategoryContainer = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(metaActions.getCategories());
+  }, []);
+
   return (
     <Grid container spacing={3}>
       {[
