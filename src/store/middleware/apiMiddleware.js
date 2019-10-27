@@ -1,10 +1,11 @@
-import firebase from 'firebase/app';
-import 'firebase/database';
-
 import { uiActions } from 'store/ui';
 import * as errorTypes from 'store/ui/types';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const env = process.env.NODE_ENV || 'development';
+
+const firestore = firebase.firestore();
 
 const apiMiddleware = ({ dispatch }) => next => action => {
   next(action);
@@ -23,15 +24,17 @@ const apiMiddleware = ({ dispatch }) => next => action => {
   // for handling multiple loading spinner
   dispatch(uiActions.fetchingStart(label));
 
-  const ref = firebase.database().ref(`/${path}`);
-  return ref
-    .once('value')
-    .then(res => {
-      next({
-        type: `${action.type}_completed`,
-        payload: res.val(),
-        meta: action.meta,
-      });
+  // const ref = firebase.collection(`/${path}`).doc();
+  return firestore
+    .collection('category')
+    .get()
+    .then(doc => {
+      // console.log(doc.data());
+      // next({
+      //   type: `${action.type}_completed`,
+      //   payload: res.val(),
+      //   meta: action.meta,
+      // });
 
       // Notify request finished
       dispatch(uiActions.fetchingEnd(label));

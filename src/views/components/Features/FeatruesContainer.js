@@ -41,8 +41,8 @@ const FeaturesContainer = () => {
             'https://stackoverflow.com/questions/50307876/grid-list-angular-material-masonry',
           category: 'form',
         },
-      ].map(feature => (
-        <Grid item sm={4}>
+      ].map((feature, index) => (
+        <Grid key={index} item sm={4}>
           <Feature feature={feature} />
         </Grid>
       ))}
