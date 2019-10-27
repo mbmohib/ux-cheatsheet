@@ -1,11 +1,10 @@
 import { uiActions } from 'store/ui';
 import * as errorTypes from 'store/ui/types';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import { firestore } from 'firebase-config/fireInstance';
+// import firebase from 'firebase/app';
+// import 'firebase/firestore';
 
-const env = process.env.NODE_ENV || 'development';
-
-const firestore = firebase.firestore();
+// const firestore = firebase.firestore();
 
 const apiMiddleware = ({ dispatch }) => next => action => {
   next(action);
@@ -26,7 +25,7 @@ const apiMiddleware = ({ dispatch }) => next => action => {
 
   // const ref = firebase.collection(`/${path}`).doc();
   return firestore
-    .collection('category')
+    .collection('categories')
     .get()
     .then(doc => {
       // console.log(doc.data());

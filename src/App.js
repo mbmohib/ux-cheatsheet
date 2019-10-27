@@ -9,24 +9,7 @@ import 'firebase/auth';
 import Theme from 'styles';
 import store, { persistor } from 'store/redux';
 
-const firebaseConfig = {
-  apiKey: process.env.REACT_APP_apiKey,
-  authDomain: process.env.REACT_APP_authDomain,
-  databaseURL: process.env.REACT_APP_databaseURL,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
-  measurementId: process.env.REACT_APP_measurementId,
-};
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    firebase.initializeApp(firebaseConfig);
-  }
-
-  render() {
+export default function App() {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
@@ -37,6 +20,5 @@ class App extends Component {
       </Provider>
     );
   }
-}
 
 export default App;
