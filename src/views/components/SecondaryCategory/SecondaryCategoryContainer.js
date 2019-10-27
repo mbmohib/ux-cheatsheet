@@ -8,14 +8,14 @@ const PrimaryCategoryContainer = () => {
   return (
     <Grid container spacing={3}>
       {[
-        { label: 'Input', icon: <InputIcon />, url: '' },
-        { label: 'Form', icon: <FormIcon />, url: '' },
+        { label: 'Input', icon: <InputIcon size="40" />, url: '' },
+        { label: 'Form', icon: <FormIcon size="40" />, url: '' },
         {
           label: 'Search',
-          icon: <SearchIcon size="80" />,
+          icon: <SearchIcon size="40" />,
           url: '',
         },
-        { label: 'Button', icon: <ButtonIcon />, url: '' },
+        { label: 'Button', icon: <ButtonIcon size="40" />, url: '' },
       ].map(category => (
         <Grid item sm={3} key={category.label}>
           <SecondaryCategory category={category} />

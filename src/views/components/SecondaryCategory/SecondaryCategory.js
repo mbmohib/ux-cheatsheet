@@ -5,21 +5,21 @@ import { Wrapper, Typography } from 'views/ui';
 const SecondaryCategory = ({ category }) => {
   return (
     <Wrapper
-      px={5}
-      pb={10}
-      pt={8}
+      p={3}
+      hover={1}
       borderRadius={5}
-      shadow={1}
-      hover
       flex
       align="center"
-      justify="center"
-      direction="column"
+      bgcolor="secondary.light"
     >
-      {category.icon}
-      <Typography variant="h4" mt={1}>
-        {category.label}
-      </Typography>
+      <Wrapper width="30%" borderRight={1} borderColor="grey.500">
+        {category.icon}
+      </Wrapper>
+      <Wrapper>
+        <Typography variant="h4" ml={2}>
+          {category.label}
+        </Typography>
+      </Wrapper>
     </Wrapper>
   );
 };

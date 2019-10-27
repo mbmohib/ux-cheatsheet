@@ -196,7 +196,7 @@ export default {
     },
     secondary: {
       main: '#3a3a3a',
-      light: 'rgb(227, 51, 113)',
+      light: '#f1f7f6',
       dark: 'rgb(154, 0, 54)',
       contrastText: 'rgb(238, 238, 238)',
     },

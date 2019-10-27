@@ -42,19 +42,21 @@ const Wrapper = styled.div`
         : ''}
 
     ${props =>
-      props.hover && props.shadow
-        ? css`
-            cursor: pointer;
-            :hover {
-              box-shadow: 0 16px 32px 0 rgba(51, 51, 51, 0.24);
-            }
-          `
-        : ''}
-
-    ${props =>
-      props.hover &&
+      props.hover === 1 &&
       css`
         cursor: pointer;
+        :hover {
+          box-shadow: 0 8px 16px 0 rgba(51, 51, 51, 0.08);
+        }
+      `}
+
+    ${props =>
+      props.hover === 2 &&
+      css`
+        cursor: pointer;
+        :hover {
+          box-shadow: 0 16px 32px 0 rgba(51, 51, 51, 0.24);
+        }
       `}
 
   ${spacing};

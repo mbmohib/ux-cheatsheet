@@ -12,10 +12,10 @@ const Home = () => (
     <Hero />
     <PrimaryCategory />
     <Wrapper mt={10}>
-      <Features />
+      <SecondaryCategory />
     </Wrapper>
     <Wrapper mt={10}>
-      <SecondaryCategory />
+      <Features />
     </Wrapper>
   </Container>
 );
