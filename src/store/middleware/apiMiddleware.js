@@ -25,20 +25,21 @@ const apiMiddleware = ({ dispatch }) => next => action => {
 
   // const ref = firebase.collection(`/${path}`).doc();
   return firestore
-    .collection('categories')
+    .collection(path)
     .get()
-    .then(doc => {
-      // console.log(doc.data());
-      // next({
-      //   type: `${action.type}_completed`,
-      //   payload: res.val(),
-      //   meta: action.meta,
-      // });
+    .then(querySnapshot => {
+      console.log(querySnapshot);
+      next({
+        type: `${action.type}_completed`,
+        payload: querySnapshot,
+        meta: action.meta,
+      });
 
       // Notify request finished
       dispatch(uiActions.fetchingEnd(label));
     })
     .catch(err => {
+      console.log(err);
       next({
         type: errorTypes.SET_ERROR_MESSAGE,
         payload: err,

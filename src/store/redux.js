@@ -5,16 +5,17 @@ import storage from 'redux-persist/lib/storage';
 
 import { apiMiddleware } from './middleware';
 import ui from './ui';
-import metas from './metas';
+import meta from './meta';
 
 const persistConfig = {
   key: 'root',
   storage,
+  whitelist: ['meta'],
 };
 
 const rootReducer = combineReducers({
   ui,
-  metas,
+  meta,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

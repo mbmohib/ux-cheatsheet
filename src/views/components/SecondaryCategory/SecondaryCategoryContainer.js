@@ -1,22 +1,17 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
+import { useSelector } from 'react-redux';
 
+import { selectSecondaryCategories } from 'store/meta';
 import SecondaryCategory from './SecondaryCategory';
 import { InputIcon, FormIcon, SearchIcon, ButtonIcon } from 'assets/icons';
 
 const PrimaryCategoryContainer = () => {
+  const categories = useSelector(selectSecondaryCategories);
+
   return (
     <Grid container spacing={3}>
-      {[
-        { label: 'Input', icon: <InputIcon size="40" />, url: '' },
-        { label: 'Form', icon: <FormIcon size="40" />, url: '' },
-        {
-          label: 'Search',
-          icon: <SearchIcon size="40" />,
-          url: '',
-        },
-        { label: 'Button', icon: <ButtonIcon size="40" />, url: '' },
-      ].map(category => (
+      {categories.map(category => (
         <Grid item sm={3} key={category.label}>
           <SecondaryCategory category={category} />
         </Grid>

@@ -16,8 +16,8 @@ const SecondaryCategory = ({ category }) => {
         {category.icon}
       </Wrapper>
       <Wrapper>
-        <Typography variant="h4" ml={2}>
-          {category.label}
+        <Typography variant="h4" ml={2} textTransform="capitalize">
+          {category.title}
         </Typography>
       </Wrapper>
     </Wrapper>

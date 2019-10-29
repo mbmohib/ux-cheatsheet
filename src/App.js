@@ -10,15 +10,13 @@ import Theme from 'styles';
 import store, { persistor } from 'store/redux';
 
 export default function App() {
-    return (
-      <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          <Theme>
-            <Routes />
-          </Theme>
-        </PersistGate>
-      </Provider>
-    );
-  }
-
-export default App;
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Theme>
+          <Routes />
+        </Theme>
+      </PersistGate>
+    </Provider>
+  );
+}
