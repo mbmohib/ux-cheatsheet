@@ -14,7 +14,7 @@ const Category = () => {
 
   return (
     <Container>
-      <Hero text={`${param.slug} cheatsheet for`} />
+      <Hero text={`${param.slug} cheatsheet for`} categoryId={categoryId} />
       <Wrapper mt={10}>
         <Tips categoryId={categoryId} />
       </Wrapper>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { signInImage, checkoutImage } from 'assets/images';
+import { Link } from 'react-router-dom';
 
+import { signInImage, checkoutImage } from 'assets/images';
 import { Wrapper, Typography, Button } from 'views/ui';
 
 const PrimaryCategory = ({ category }) => {
@@ -27,7 +28,13 @@ const PrimaryCategory = ({ category }) => {
       <Typography variant="body1" color="textSecondary">
         Read all the {category.title} related UX
       </Typography>
-      <Button variant="contained" color="primary" mt={3}>
+      <Button
+        variant="contained"
+        color="primary"
+        mt={3}
+        component={Link}
+        to={`/category/${category.title}`}
+      >
         Read
       </Button>
     </Wrapper>

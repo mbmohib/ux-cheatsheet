@@ -31,6 +31,7 @@ export const selectTipsWithoutImage = createSelector(
 );
 
 export const selectTipsCount = createSelector(
-  [selectTips],
-  ({ tips }) => tips.length
+  [selectTips, (_, categoryId) => categoryId],
+  ({ tips }, categoryId) =>
+    tips.filter(tip => tip.categories === categoryId).length
 );
