@@ -12,3 +12,11 @@ export const selectSecondaryCategories = createSelector(
   ({ categories }) =>
     categories.filter(category => category.type === 'secondary')
 );
+
+export const selectId = createSelector(
+  [selectMeta, (_, slug) => slug],
+  ({ categories }, slug) => {
+    const category = categories.find(category => category.title === slug);
+    return category.id;
+  }
+);

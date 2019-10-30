@@ -1,6 +1,15 @@
 import tipsReducers from './reducers';
 import * as tipsActions from './actions';
-import { selectTipsWithImages, selectTipsCount } from './selector';
+import {
+  selectTipsWithImages,
+  selectTipsWithoutImage,
+  selectTipsCount,
+} from './selector';
 
-export { tipsActions, selectTipsWithImages, selectTipsCount };
+export {
+  tipsActions,
+  selectTipsWithImages,
+  selectTipsWithoutImage,
+  selectTipsCount,
+};
 export default tipsReducers;

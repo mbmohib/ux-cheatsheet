@@ -129,16 +129,17 @@ export default {
     h3: {
       fontFamily: '""Roboto", "Helvetica", "Arial", sans-serif"',
       fontWeight: 400,
-      fontSize: '3rem',
+      fontSize: '2rem',
       lineHeight: 1.04,
       letterSpacing: '0em',
     },
     h4: {
       fontFamily: '""Roboto", "Helvetica", "Arial", sans-serif"',
       fontWeight: 400,
-      fontSize: '1.5rem',
+      fontSize: '1.8rem',
       lineHeight: 1.17,
       letterSpacing: '0.00735em',
+      color: 'rgba(0, 0, 0, 0.87)',
     },
     h5: {
       fontFamily: '""Roboto", "Helvetica", "Arial", sans-serif"',

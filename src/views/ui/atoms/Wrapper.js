@@ -13,6 +13,12 @@ const Wrapper = styled.div`
         props.justify ? props.justify : 'flex-start'};
       flex-direction: ${props => (props.direction ? props.direction : 'row')};
     `}
+  
+  ${({ grow }) =>
+    grow &&
+    css`
+      flex-grow: 1;
+    `}
 
   ${props =>
     props.flex && props.align
