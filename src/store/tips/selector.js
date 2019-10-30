@@ -1,14 +1,13 @@
 import { createSelector } from 'reselect';
 
-const selectMeta = state => state.meta;
+const selectTips = state => state.tips;
 
-export const selectPrimaryCategories = createSelector(
-  [selectMeta],
-  ({ categories }) => categories.filter(category => category.type === 'primary')
+export const selectTipsWithImages = createSelector(
+  [selectTips],
+  ({ tips }) => tips.filter(tip => tip.image)
 );
 
-export const selectSecondaryCategories = createSelector(
-  [selectMeta],
-  ({ categories }) =>
-    categories.filter(category => category.type === 'secondary')
+export const selectTipsCount = createSelector(
+  [selectTips],
+  ({ tips }) => tips.length
 );

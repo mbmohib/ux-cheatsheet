@@ -8,7 +8,6 @@ export const getCategories = () => {
       method: 'GET',
     },
     meta: {
-      jwt: false,
       API: true,
       label: 'categories',
       loadMore: false,

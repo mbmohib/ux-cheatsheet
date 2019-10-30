@@ -1,15 +1,11 @@
 import { uiActions } from 'store/ui';
 import * as errorTypes from 'store/ui/types';
 import { firestore } from 'firebase-config/fireInstance';
-// import firebase from 'firebase/app';
-// import 'firebase/firestore';
-
-// const firestore = firebase.firestore();
 
 const apiMiddleware = ({ dispatch }) => next => action => {
   next(action);
   const { API, label } = action.meta || {};
-  const { path, data } = action.payload || {};
+  const { path } = action.payload || {};
 
   if (!API) {
     return;
@@ -28,7 +24,6 @@ const apiMiddleware = ({ dispatch }) => next => action => {
     .collection(path)
     .get()
     .then(querySnapshot => {
-      console.log(querySnapshot);
       next({
         type: `${action.type}_completed`,
         payload: querySnapshot,
@@ -39,7 +34,6 @@ const apiMiddleware = ({ dispatch }) => next => action => {
       dispatch(uiActions.fetchingEnd(label));
     })
     .catch(err => {
-      console.log(err);
       next({
         type: errorTypes.SET_ERROR_MESSAGE,
         payload: err,

@@ -12,7 +12,7 @@ const PrimaryCategoryContainer = () => {
   return (
     <Grid container spacing={3}>
       {categories.map(category => (
-        <Grid item sm={3} key={category.label}>
+        <Grid item sm={3} key={category.id}>
           <SecondaryCategory category={category} />
         </Grid>
       ))}

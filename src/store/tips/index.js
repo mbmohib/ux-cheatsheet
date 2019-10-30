@@ -1,6 +1,6 @@
-import metaReducers from './reducers';
-import * as metaActions from './actions';
-import { selectPrimaryCategories, selectSecondaryCategories } from './selector';
+import tipsReducers from './reducers';
+import * as tipsActions from './actions';
+import { selectTipsWithImages, selectTipsCount } from './selector';
 
-export { metaActions, selectPrimaryCategories, selectSecondaryCategories };
-export default metaReducers;
+export { tipsActions, selectTipsWithImages, selectTipsCount };
+export default tipsReducers;

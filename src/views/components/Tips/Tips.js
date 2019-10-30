@@ -4,18 +4,18 @@ import { Grid } from '@material-ui/core';
 import { Wrapper, Image, Typography, Button, Divider } from 'views/ui';
 import { FormIcon } from 'assets/icons';
 
-const Feature = ({ feature }) => {
+const Tip = ({ tip }) => {
   return (
     <Wrapper p={2} borderRadius={5} shadow={1}>
-      <Image src={feature.image} />
+      <Image src={tip.image} />
       <Typography variant="body1" mt={2} mb={5}>
-        {feature.text}
+        {tip.description}
       </Typography>
       <Divider />
       <Wrapper>
         <Grid container alignItems="center">
           <Grid item xs={6}>
-            <Button color="primary" variant="text" href={feature.source}>
+            <Button color="primary" variant="text" href={tip.source}>
               Source
             </Button>
           </Grid>
@@ -28,7 +28,7 @@ const Feature = ({ feature }) => {
                 ml={1}
                 textTransform="capitalize"
               >
-                {feature.category}
+                {tip.category}
               </Typography>
             </Wrapper>
           </Grid>
@@ -38,4 +38,4 @@ const Feature = ({ feature }) => {
   );
 };
 
-export default Feature;
+export default Tip;

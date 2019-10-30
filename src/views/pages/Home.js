@@ -4,7 +4,7 @@ import { Container } from '@material-ui/core';
 import Hero from 'views/components/Hero';
 import PrimaryCategory from 'views/components/PrimaryCategory';
 import SecondaryCategory from 'views/components/SecondaryCategory';
-import Features from 'views/components/Features';
+import Features from 'views/components/Tips';
 import { Wrapper } from 'views/ui';
 
 const Home = () => (

@@ -6,6 +6,7 @@ import storage from 'redux-persist/lib/storage';
 import { apiMiddleware } from './middleware';
 import ui from './ui';
 import meta from './meta';
+import tips from './tips';
 
 const persistConfig = {
   key: 'root',
@@ -16,6 +17,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   ui,
   meta,
+  tips,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,16 +1,15 @@
 import * as types from './types';
 
-export const getCategories = () => {
+export const getTips = () => {
   return {
-    type: types.GET_CATEGORIES,
+    type: types.GET_TIPS,
     payload: {
-      path: `categories`,
+      path: `tips`,
       method: 'GET',
     },
     meta: {
-      jwt: false,
       API: true,
-      label: 'categories',
+      label: 'tips',
       loadMore: false,
     },
   };

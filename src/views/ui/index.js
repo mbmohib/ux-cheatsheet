@@ -6,6 +6,7 @@ export { default as Image } from './atoms/Image';
 export { default as Button } from './atoms/Button';
 
 export { default as Logo } from './molecules/Logo';
+export { default as PreLoader } from './molecules/PreLoader';
 
 export { default as HeaderStyle } from './organisms/HeaderStyle';
 export { default as Search } from './organisms/Search';

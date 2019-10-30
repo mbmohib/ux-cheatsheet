@@ -2,23 +2,23 @@ import produce from 'immer';
 import * as types from './types';
 
 const initialState = {
-  categories: [],
+  tips: [],
 };
 
-const metaReducers = function(state = initialState, action) {
+const tipsReducers = function(state = initialState, action) {
   const { type, payload } = action;
 
   return produce(state, draft => {
     switch (type) {
-      case types.GET_CATEGORIES_COMPLETED:
-        const categories = [];
-        payload.forEach(function(doc) {
-          categories.push({
+      case types.GET_TIPS_COMPLETED:
+        const tips = [];
+        payload.forEach(doc => {
+          tips.push({
             id: doc.id,
             ...doc.data(),
           });
         });
-        draft.categories = categories;
+        draft.tips = tips;
         break;
       default:
         return;
@@ -26,4 +26,4 @@ const metaReducers = function(state = initialState, action) {
   });
 };
 
-export default metaReducers;
+export default tipsReducers;

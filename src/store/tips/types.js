@@ -1,2 +1,2 @@
-export const GET_CATEGORIES = 'meta/get_categories';
-export const GET_CATEGORIES_COMPLETED = 'meta/get_categories_completed';
+export const GET_TIPS = 'meta/get_tips';
+export const GET_TIPS_COMPLETED = 'meta/get_tips_completed';

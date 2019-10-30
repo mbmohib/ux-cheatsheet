@@ -42,7 +42,7 @@ const Search = () => {
   return (
     <SearchWrapper>
       <SearchIcon fill={theme.palette.secondary.main} />
-      <SearchInput type="text" placeholder="Search..." />
+      <SearchInput type="text" placeholder="Search..." disabled />
     </SearchWrapper>
   );
 };
