@@ -15,6 +15,9 @@ import MoneyIcon from './MoneyIcon';
 import InputIcon from './InputIcon';
 import FormIcon from './FormIcon';
 import ButtonIcon from './ButtonIcon';
+import ColorIcon from './ColorIcon';
+import TextIcon from './TextIcon';
+import ImageIcon from './ImageIcon';
 
 export {
   AdminIcon,
@@ -34,4 +37,7 @@ export {
   InputIcon,
   FormIcon,
   ButtonIcon,
+  ColorIcon,
+  TextIcon,
+  ImageIcon,
 };
