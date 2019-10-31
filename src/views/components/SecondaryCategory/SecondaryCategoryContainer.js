@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 import { selectSecondaryCategories } from 'store/meta';
 import SecondaryCategory from './SecondaryCategory';
-import { InputIcon, FormIcon, SearchIcon, ButtonIcon } from 'assets/icons';
 
 const PrimaryCategoryContainer = () => {
   const categories = useSelector(selectSecondaryCategories);

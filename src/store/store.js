@@ -11,7 +11,7 @@ import tips from './tips';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['meta'],
+  whitelist: ['meta', 'tips'],
 };
 
 const rootReducer = combineReducers({

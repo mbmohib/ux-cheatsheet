@@ -4,7 +4,7 @@ import Routes from 'routes/routes';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import Theme from 'styles';
-import store, { persistor } from 'store/redux';
+import store, { persistor } from 'store/store';
 
 export default function App() {
   return (

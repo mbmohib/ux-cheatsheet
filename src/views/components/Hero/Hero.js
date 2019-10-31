@@ -8,8 +8,8 @@ const Hero = ({ text, totalTips }) => {
         {text} <em>Frontend Devs</em>
       </Typography>
       <Typography variant="subtitle1">
-        <em>{(totalTips && totalTips + '+') || 'Loading..'}</em> User Experience
-        Tips
+        <em>{totalTips === 'undefined' ? 'Loading..' : totalTips}</em> User
+        Experience Tips
       </Typography>
     </Wrapper>
   );

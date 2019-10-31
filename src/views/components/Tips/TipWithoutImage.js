@@ -24,7 +24,12 @@ const TipWithoutImage = ({ tip }) => {
         </Typography>
       </Wrapper>
       <Wrapper>
-        <Button color="primary" variant="text" href={tip.source}>
+        <Button
+          color="primary"
+          variant="text"
+          href={tip.source}
+          target="_blank"
+        >
           Source
         </Button>
       </Wrapper>

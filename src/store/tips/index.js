@@ -4,6 +4,9 @@ import {
   selectTipsWithImages,
   selectTipsWithoutImage,
   selectTipsCount,
+  selectTipsCountCategoryWise,
+  selectTipsCategoryWiseWithImages,
+  selectTipsCategoryWiseWithoutImage,
 } from './selector';
 
 export {
@@ -11,5 +14,8 @@ export {
   selectTipsWithImages,
   selectTipsWithoutImage,
   selectTipsCount,
+  selectTipsCountCategoryWise,
+  selectTipsCategoryWiseWithImages,
+  selectTipsCategoryWiseWithoutImage,
 };
 export default tipsReducers;

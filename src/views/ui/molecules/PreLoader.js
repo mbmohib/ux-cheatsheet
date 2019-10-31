@@ -25,7 +25,7 @@ const Line = styled.div`
   width: 15px;
   height: 15px;
   border-radius: 15px;
-  background-color: #eb1763;
+  background-color: ${({ theme }) => theme.palette.primary.main};
   margin-right: 4px;
 
   &:last-child {

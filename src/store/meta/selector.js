@@ -17,6 +17,6 @@ export const selectId = createSelector(
   [selectMeta, (_, slug) => slug],
   ({ categories }, slug) => {
     const category = categories.find(category => category.title === slug);
-    return category.id;
+    return category && category.id;
   }
 );

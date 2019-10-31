@@ -1,45 +1,39 @@
-import React from 'react';
-import { Grid } from '@material-ui/core';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-import {
-  tipsActions,
-  selectTipsWithImages,
-  selectTipsWithoutImage,
-} from 'store/tips';
-import Tip from './Tip';
-import TipWithoutImage from './TipWithoutImage';
-import { Fetcher } from 'utils';
+import { tipsActions } from 'store/tips';
+import AllTips from './AllTips';
+import TipsCategory from './TipsCategory';
+import { PreLoader } from 'views/ui';
+import { selectId } from 'store/meta';
 
-const TipsContainer = ({ categoryId }) => {
-  const tips = useSelector(state => selectTipsWithImages(state, categoryId));
-  const tipsWithoutImage = useSelector(state =>
-    selectTipsWithoutImage(state, categoryId)
-  );
+const TipsContainer = () => {
+  const dispatch = useDispatch();
+  const param = useParams();
+  const { slug } = param;
+  const loading = useSelector(({ ui }) => ui.loading.tips);
+  const tips = useSelector(({ tips }) => tips.tips);
+  const categoryId = useSelector(state => selectId(state, slug));
   const { getTips } = tipsActions;
 
-  return (
-    <Fetcher fetchData={getTips} label="tips">
-      {() => (
-        <>
-          <Grid container spacing={3}>
-            {tips.map(tip => (
-              <Grid key={tip.id} item sm={4}>
-                <Tip tip={tip} />
-              </Grid>
-            ))}
-          </Grid>
+  useEffect(() => {
+    dispatch(getTips());
+  }, [dispatch, getTips]);
 
-          <Grid container spacing={3}>
-            {tipsWithoutImage.map(tip => (
-              <Grid key={tip.id} item sm={4}>
-                <TipWithoutImage tip={tip} />
-              </Grid>
-            ))}
-          </Grid>
+  const isLoading = tips.length === 0 && loading;
+
+  return (
+    <>
+      {isLoading ? (
+        <PreLoader />
+      ) : (
+        <>
+          {!slug && <AllTips />}
+          {slug && <TipsCategory categoryId={categoryId} />}
         </>
       )}
-    </Fetcher>
+    </>
   );
 };
 

@@ -15,6 +15,18 @@ function addCategory(tip, categories) {
 }
 
 export const selectTipsWithImages = createSelector(
+  [selectTips, selectMeta],
+  ({ tips }, { categories }) =>
+    tips.filter(tip => tip.image).map(tip => addCategory(tip, categories))
+);
+
+export const selectTipsWithoutImage = createSelector(
+  [selectTips, selectMeta],
+  ({ tips }, { categories }) =>
+    tips.filter(tip => !tip.image).map(tip => addCategory(tip, categories))
+);
+
+export const selectTipsCategoryWiseWithImages = createSelector(
   [selectTips, selectMeta, (_, categoryId) => categoryId],
   ({ tips }, { categories }, categoryId) =>
     tips
@@ -22,7 +34,7 @@ export const selectTipsWithImages = createSelector(
       .map(tip => addCategory(tip, categories))
 );
 
-export const selectTipsWithoutImage = createSelector(
+export const selectTipsCategoryWiseWithoutImage = createSelector(
   [selectTips, selectMeta, (_, categoryId) => categoryId],
   ({ tips }, { categories }, categoryId) =>
     tips
@@ -31,6 +43,11 @@ export const selectTipsWithoutImage = createSelector(
 );
 
 export const selectTipsCount = createSelector(
+  [selectTips],
+  ({ tips }) => tips.length
+);
+
+export const selectTipsCountCategoryWise = createSelector(
   [selectTips, (_, categoryId) => categoryId],
   ({ tips }, categoryId) =>
     tips.filter(tip => tip.categories === categoryId).length

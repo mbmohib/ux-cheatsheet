@@ -9,7 +9,7 @@ import { Wrapper } from 'views/ui';
 
 const Home = () => (
   <Container>
-    <Hero text="UX Cheatsheet for" />
+    <Hero />
     <PrimaryCategory />
     <Wrapper mt={10}>
       <SecondaryCategory />
